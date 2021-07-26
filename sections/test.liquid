@@ -1,0 +1,30 @@
+{{ 'component-test-comp.css' | asset_url | stylesheet_tag }}
+<div>
+  teste
+  <test-comp name="John Doe" avatar="https://randomuser.me/api/portraits/men/1.jpg">
+    <div slot="email">email@email.com</div>
+    <div slot="phone">111-111-11</div>
+  </test-comp>
+</div>
+
+{% schema %}
+{
+  "name": "test",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": false,
+      "label": "t:sections.apps.settings.include_margins.label"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:sections.apps.presets.name"
+    }
+  ]
+}
+{% endschema %}
